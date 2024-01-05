@@ -47,4 +47,9 @@ Thumbs.db
 *.flv
 *.mov
 *.wmv
-
+*.obj
+*.vs
+*.bin
+bin/
+TrabalhoFinalDOS/obj/
+TrabalhoFinalDOS/bin/
