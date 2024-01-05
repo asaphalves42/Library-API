@@ -53,3 +53,5 @@ Thumbs.db
 bin/
 TrabalhoFinalDOS/obj/
 TrabalhoFinalDOS/bin/
+*.suo
+TrabalhoFinalDOS/.vs/
