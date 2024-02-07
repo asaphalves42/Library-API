@@ -17,10 +17,8 @@
 
   <ItemGroup>
     <Folder Include="2-Services\Mapper\" />
-    <Folder Include="2-Services\Interfaces\" />
     <Folder Include="2-Services\Exceptions\" />
     <Folder Include="3-Repository\" />
-    <Folder Include="DTO\" />
   </ItemGroup>
 
 </Project>
