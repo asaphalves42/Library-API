@@ -1,5 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using TrabalhoFinalDOS.Services;
+using TrabalhoFinalDOS.Repository;
+using TrabalhoFinalDOS.Controllers;
+using TrabalhoFinalDOS._2___Services.Excepcoes;
+using TrabalhoFinalDOS._2_Services.Exceptions;
+using TrabalhoFinalDOS._2_Services.Interfaces;
 using TrabalhoFinalDOS._2_Services;
 using TrabalhoFinalDOS._3_Repository;
 
@@ -19,6 +24,7 @@ builder.Services.AddDbContext<BaseDados>(options =>
 
 // injectar os servišos
 builder.Services.AddScoped<IClientesService, ClientesService>();
+builder.Services.AddScoped<ILivrosService, LivrosService>();
 
 var app = builder.Build();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
@@ -34,4 +40,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run(); ;
+app.Run();

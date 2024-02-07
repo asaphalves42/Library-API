@@ -4,14 +4,8 @@ using TrabalhoFinalDOS.DTO;
 
 namespace TrabalhoFinalDOS.Services
 {
-    public class ClientesService : IClientesService
+    public interface IClientesService
     {
-
-        private readonly BaseDados _basedados;
-        public ClientesService(BaseDados basedados)
-        {
-            _basedados = basedados;
-        }
         public ClienteDTO CriarCliente(ClienteDTO novoCliente);
     }
 }
