@@ -1,0 +1,58 @@
+﻿using TrabalhoFinalDOS.DTO;
+using TrabalhoFinalDOS.Models;
+
+<<<<<<< HEAD
+namespace TrabalhoFinalDOS._2_Services.Mapper
+{
+    public static class Mappers
+    {
+        public static LivroDTO livroParaDTO(this Livro livro)
+        {
+            if (livro == null)
+=======
+namespace TrabalhoFinalDOS.Mapper
+{
+    public static class Mappers
+    {
+        public static ClienteDTO clienteParaDTO(this Cliente cliente)
+        {
+            if (cliente == null)
+>>>>>>> 30645e3cb03d8a9d90d0703b89efba50122ef236
+            {
+                return null;
+            }
+
+<<<<<<< HEAD
+            return new LivroDTO()
+            {
+                Id = livro.Id,
+                Titulo = livro.Titulo,
+                Autor = livro.Autor,
+                Ano = livro.Ano
+            };
+        }
+
+        public static Livro DTOParaLivro(this LivroDTO livro)
+        {
+            return new Livro(livro.Titulo, livro.Autor, livro.Ano);
+        }
+
+    }
+}
+=======
+            return new ClienteDTO()
+            {
+                Id = cliente.Id,
+                Nome = cliente.Nome,
+                Endereco = cliente.Endereco,
+                Email = cliente.Email,
+                Telemovel = cliente.Telemovel,
+            };
+        }
+        public static Cliente DTOParaCliente(this ClienteDTO cliente)
+        {
+            return new Cliente(cliente.Nome, cliente.Endereco, cliente.Telemovel, cliente.Email);
+        }
+    }
+}
+>>>>>>> 30645e3cb03d8a9d90d0703b89efba50122ef236
