@@ -1,9 +1,10 @@
 ﻿using System.Net;
+using TrabalhoFinalDOS._2___Services.Excepcoes;
 using TrabalhoFinalDOS._2_Services.Interfaces;
 using TrabalhoFinalDOS._2_Services.Mapper;
-using TrabalhoFinalDOS._3_Repository;
 using TrabalhoFinalDOS.DTO;
 using TrabalhoFinalDOS.Models;
+using TrabalhoFinalDOS.Repository;
 
 namespace TrabalhoFinalDOS._2_Services
 {

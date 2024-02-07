@@ -1,4 +1,8 @@
-﻿using TrabalhoFinalDOS._3_Repository;
+﻿using TrabalhoFinalDOS._2_Services.Mapper;
+using TrabalhoFinalDOS.DTO;
+using TrabalhoFinalDOS.Models;
+using TrabalhoFinalDOS.Repository;
+using TrabalhoFinalDOS.Services;
 
 namespace TrabalhoFinalDOS._2_Services
 {

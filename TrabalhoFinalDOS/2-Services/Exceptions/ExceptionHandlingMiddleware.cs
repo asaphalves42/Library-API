@@ -1,6 +1,8 @@
-﻿using System.Net;
+﻿using Azure;
+using Newtonsoft.Json;
+using System.Net;
 
-namespace TrabalhoFinalDOS._2_Services.Exceptions
+namespace TrabalhoFinalDOS._2___Services.Excepcoes
 {
     public class ExceptionHandlingMiddleware
     {
@@ -11,6 +13,18 @@ namespace TrabalhoFinalDOS._2_Services.Exceptions
         {
             _next = next;
             _logger = logger;
+        }
+
+        public async Task InvokeAsync(HttpContext context)
+        {
+            try
+            {
+                await _next(context);
+            }
+            catch (Exception ex)
+            {
+                await HandleExceptionAsync(context, ex);
+            }
         }
 
         private async Task HandleExceptionAsync(HttpContext context, Exception exception)
@@ -31,21 +45,6 @@ namespace TrabalhoFinalDOS._2_Services.Exceptions
             await context.Response.WriteAsJsonAsync(responseObject);
         }
         public record ExceptionResponse(HttpStatusCode StatusCode, string Mensagem);
-
-    }
-
-    public async Task InvokeAsync(HttpContext context)
-        {
-            try
-            {
-                await _next(context);
-            }
-            catch (Exception ex)
-            {
-                await HandleExceptionAsync(context, ex);
-            }
-        }
-
 
     }
 }
