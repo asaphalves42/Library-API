@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="2-Services\Exceptions\" />
     <Folder Include="3-Repository\" />
   </ItemGroup>
 
