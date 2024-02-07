@@ -6,5 +6,9 @@ namespace TrabalhoFinalDOS.Services
     public interface IClientesService
     {
         public ClienteDTO CriarCliente(ClienteDTO novoCliente);
+
+        public List<ClienteDTO> ObterClientes();
+
+        public ClienteDTO ObterCliente(int Id);
     }
 }
