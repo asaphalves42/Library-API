@@ -1,4 +1,5 @@
-﻿using TrabalhoFinalDOS._2_Services.Interfaces;
+﻿using System.Net;
+using TrabalhoFinalDOS._2_Services.Interfaces;
 using TrabalhoFinalDOS.DTO;
 using TrabalhoFinalDOS.Models;
 
@@ -22,6 +23,16 @@ namespace TrabalhoFinalDOS._2_Services
             Livro livro = novoLivro.DTOParaLivro();
             this._basedados.Livro.Add(livro);
             this._basedados.SaveChanges();
+            return livro.livroParaDTO();
+        }
+
+        public LivroDTO ObterLivro(int id)
+        {
+            var livro = this._basedados.Livro.Where(objecto => objecto.Id == id).FirstOrDefault();
+            if (livro == null)
+            {
+                throw new ExcepcaoHTTP("Livro não encontrado", HttpStatusCode.NotFound);
+            }
             return livro.livroParaDTO();
         }
 
