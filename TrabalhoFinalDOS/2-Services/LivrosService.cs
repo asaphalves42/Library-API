@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using TrabalhoFinalDOS._2_Services.Interfaces;
+using TrabalhoFinalDOS._2_Services.Mapper;
 using TrabalhoFinalDOS.DTO;
 using TrabalhoFinalDOS.Models;
 

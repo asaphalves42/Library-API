@@ -6,7 +6,7 @@ namespace TrabalhoFinalDOS._1_Controllers.v1
 {
     [ApiController]
     [Route("v1/[controller]")]
-    public class LivrosController
+    public class LivrosController : ControllerBase
     {
 
         private readonly ILogger<LivrosController> _logger;
