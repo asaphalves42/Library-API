@@ -42,6 +42,34 @@ namespace TrabalhoFinalDOS._2_Services.Mapper
                 Telemovel = cliente.Telemovel,
             };
         }
+
+        public static ReservaDTO ReservaParaDTO(this Reserva reserva)
+        {
+            return new ReservaDTO()
+            {
+                Id = reserva.Id,
+                Cliente = reserva.Cliente.Nome,
+                Titulo = reserva.Livro.Titulo,
+                Data = reserva.Data
+            };
+
+        }
+
+        public static ReservaClienteDTO ReservaParaDTOClienteReserva(this Reserva reserva)
+        {
+            return new ReservaClienteDTO()
+            {
+                Id = reserva.Id,
+                Titulo = reserva.Livro.Titulo,
+                Autor = reserva.Livro.Autor,
+                Data = reserva.Data
+            };
+        }
+        public static Reserva DTOParaReserva(this NovaReservaDTO reserva)
+        {
+
+            return new Reserva(reserva.IdCliente, reserva.IdLivro, reserva.Data);
+        }
         public static Cliente DTOParaCliente(this ClienteDTO cliente)
         {
             return new Cliente(cliente.Nome, cliente.Endereco, cliente.Telemovel, cliente.Email);

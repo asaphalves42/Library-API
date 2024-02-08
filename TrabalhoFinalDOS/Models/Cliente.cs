@@ -30,5 +30,6 @@ namespace TrabalhoFinalDOS.Models
         [Column("email")]
         public string Email { get; private set; }
 
+        public ICollection<Reserva> Reservas { get; } = new List<Reserva>();
     }
 }

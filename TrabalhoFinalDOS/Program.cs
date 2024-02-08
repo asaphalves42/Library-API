@@ -22,6 +22,7 @@ builder.Services.AddDbContext<BaseDados>(options =>
 // injectar os servišos
 builder.Services.AddScoped<IClientesService, ClientesService>();
 builder.Services.AddScoped<ILivrosService, LivrosService>();
+builder.Services.AddScoped<IReservasService, IReservasService>();
 
 var app = builder.Build();
 app.UseMiddleware<ExceptionHandlingMiddleware>();

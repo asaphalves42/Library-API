@@ -4,7 +4,7 @@ using TrabalhoFinalDOS.Models;
 using TrabalhoFinalDOS.Services;
 
 namespace TrabalhoFinalDOS.Controllers
-{ 
+{
     [ApiController]
     [Route("v1/[controller]")]
     public class ReservasController : ControllerBase
@@ -19,7 +19,19 @@ namespace TrabalhoFinalDOS.Controllers
         }
 
 
-     
+        [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ReservaDTO))]
+        public IActionResult ObterReservaPorId(int id)
+        {
+            return Ok(this._servicoReservas.ObterReservaPorId(id));
+        }
+
+        [HttpGet("Get/{idCliente}/Livros")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ReservaDTO))]
+        public IActionResult ObterReservasPorCliente(int idCliente)
+        {
+            return Ok(this._servicoReservas.ObterReservaPorCliente(idCliente));
+        }
 
         [HttpPost("")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(NovaReservaDTO))]

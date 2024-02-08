@@ -25,7 +25,7 @@ namespace TrabalhoFinalDOS.Models
         [Column("ano")]
         public int Ano { get; private set; }
 
-        //public ICollection<Reserva> Reservas { get; } = new List<Reserva>();
+        public ICollection<Reserva> Reservas { get; } = new List<Reserva>();
 
     }
 }
