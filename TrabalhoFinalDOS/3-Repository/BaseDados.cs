@@ -12,7 +12,8 @@ namespace TrabalhoFinalDOS.Repository
         public DbSet<Cliente> Cliente => Set<Cliente>();
 
         public DbSet<Livro> Livro => Set<Livro>();
+        public DbSet<Reserva> Reserva => Set<Reserva>();
 
     }
-       
+
 }
