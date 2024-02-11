@@ -56,3 +56,5 @@ TrabalhoFinalDOS/bin/
 *.suo
 TrabalhoFinalDOS/.vs/
 .vagrant
+.Tests
+TrabalhoFinalDOS.Tests/obj
