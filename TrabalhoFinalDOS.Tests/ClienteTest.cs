@@ -1,23 +1,21 @@
-using System.Collections.Generic;
-using System.Linq;
+using System;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Moq;
 using TrabalhoFinalDOS._1_Controllers.v1;
-using TrabalhoFinalDOS.Controllers;
 using TrabalhoFinalDOS.DTO;
-using TrabalhoFinalDOS.Models;
 using TrabalhoFinalDOS.Services;
 using Xunit;
 
 namespace TrabalhoFinalDOS.Tests
 {
-    public class ClienteTest
+    public class CriarClienteTeste
     {
-        private readonly IClientesService _servicoClientes;
-
         [Fact]
-        public void InserirClientes()
+        public void CriarCliente_DeveRetornarOKQuandoClienteCriadoComSucesso()
         {
-            // Arrange
+      
             var clienteDto = new ClienteDTO
             {
                 Nome = "Cliente Teste",
@@ -26,14 +24,21 @@ namespace TrabalhoFinalDOS.Tests
                 Email = "teste@teste.com"
             };
 
-            var cliente = new Cliente(clienteDto.Nome, clienteDto.Endereco, clienteDto.Telemovel, clienteDto.Email);
-            var clienteController = new ClientesController(clienteDto);
+            var mockLogger = new Mock<ILogger<ClientesController>>();
+            var mockClientesService = new Mock<IClientesService>();
+            mockClientesService.Setup(service => service.CriarCliente(It.IsAny<ClienteDTO>()))
+                               .Returns(clienteDto);
+
+            var controller = new ClientesController(mockLogger.Object, mockClientesService.Object);
+
             // Act
-            var result = clienteController.CriarCliente(clienteDto) as OkObjectResult;
-            var clienteCriado = result.Value as ClienteDTO;
+            var result = controller.CriarCliente(clienteDto) as OkObjectResult;
 
             // Assert
             Assert.NotNull(result);
+            Assert.Equal(StatusCodes.Status200OK, result.StatusCode);
+
+            var clienteCriado = result.Value as ClienteDTO;
             Assert.NotNull(clienteCriado);
             Assert.Equal(clienteDto.Nome, clienteCriado.Nome);
             Assert.Equal(clienteDto.Endereco, clienteCriado.Endereco);
