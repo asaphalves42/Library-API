@@ -76,7 +76,6 @@ services:
 
 volumes:
   portainer_data:
-    external: true
   jenkins_data:
   sonarqube_data:
   sonarqube_extensions:
