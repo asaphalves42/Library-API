@@ -31,6 +31,7 @@ services:
     networks:
       - mynetwork
     volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
 
   jenkins:
@@ -46,6 +47,7 @@ services:
     restart: always
     networks:
       - mynetwork
+    command: sh -c "apt-get update && apt-get install wget && wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && dpkg -i packages-microsoft-prod.deb && apt update && apt upgrade -y dotnet-sdk-7.0 && java -jar /usr/share/jenkins/jenkins.war"
 
   sonarqube:
     image: sonarqube
@@ -74,7 +76,6 @@ services:
 
 volumes:
   portainer_data:
-    external: true
   jenkins_data:
   sonarqube_data:
   sonarqube_extensions:
