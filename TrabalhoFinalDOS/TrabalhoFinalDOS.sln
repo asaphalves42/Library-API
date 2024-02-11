@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrabalhoFinalDOS", "TrabalhoFinalDOS.csproj", "{C0AB851F-BB94-43E6-98D5-8D1AAD190A70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrabalhoFinalDOS", "TrabalhoFinalDOS.csproj", "{C0AB851F-BB94-43E6-98D5-8D1AAD190A70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrabalhoFinalDOS.Tests", "..\TrabalhoFinalDOS.Tests\TrabalhoFinalDOS.Tests.csproj", "{3B8EBA41-D1FF-4A95-AA2A-788ECED5B968}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C0AB851F-BB94-43E6-98D5-8D1AAD190A70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0AB851F-BB94-43E6-98D5-8D1AAD190A70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0AB851F-BB94-43E6-98D5-8D1AAD190A70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B8EBA41-D1FF-4A95-AA2A-788ECED5B968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B8EBA41-D1FF-4A95-AA2A-788ECED5B968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B8EBA41-D1FF-4A95-AA2A-788ECED5B968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B8EBA41-D1FF-4A95-AA2A-788ECED5B968}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
