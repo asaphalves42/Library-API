@@ -21,6 +21,7 @@ namespace TrabalhoFinalDOS.Controllers
 
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ReservaDTO))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult ObterReservaPorId(int id)
         {
             return Ok(this._servicoReservas.ObterReservaPorId(id));

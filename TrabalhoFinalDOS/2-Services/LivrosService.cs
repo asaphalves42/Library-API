@@ -23,6 +23,10 @@ namespace TrabalhoFinalDOS._2_Services
 
         public LivroDTO CriarLivro(LivroDTO novoLivro)
         {
+
+            //validar livro
+            novoLivro.Validar();
+
             Livro livro = novoLivro.DTOParaLivro();
             this._basedados.Livro.Add(livro);
             this._basedados.SaveChanges();

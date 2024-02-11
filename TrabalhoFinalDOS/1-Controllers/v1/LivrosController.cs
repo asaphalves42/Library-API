@@ -20,6 +20,7 @@ namespace TrabalhoFinalDOS._1_Controllers.v1
 
         [HttpPost("")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(LivroDTO))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult CriarLivro([FromBody] LivroDTO body)
         {
             return Ok(this._servicoLivros.CriarLivro(body));
@@ -34,6 +35,7 @@ namespace TrabalhoFinalDOS._1_Controllers.v1
 
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(LivroDTO))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult ObterPorId(int id)
         {
             return Ok(this._servicoLivros.ObterLivro(id));

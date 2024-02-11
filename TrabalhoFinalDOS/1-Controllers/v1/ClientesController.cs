@@ -21,6 +21,7 @@ namespace TrabalhoFinalDOS._1_Controllers.v1
 
         [HttpPost("")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ClienteDTO))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult CriarCliente([FromBody] ClienteDTO body)
         {
             return Ok(this._servicoClientes.CriarCliente(body));
