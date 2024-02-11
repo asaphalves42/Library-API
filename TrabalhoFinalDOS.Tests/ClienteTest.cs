@@ -46,4 +46,7 @@ namespace TrabalhoFinalDOS.Tests
             Assert.Equal(clienteDto.Email, clienteCriado.Email);
         }
     }
+
+
+
 }
